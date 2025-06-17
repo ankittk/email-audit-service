@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  email-parser:
+    build: .
+    command: ["./emailparser"]
+    ports:
+      - "9090:9090"
+    networks:
+      - email-audit-network
+
+  rules-engine:
+    build: .
+    command: ["./rulesengine"]
+    ports:
+      - "9091:9091"
+    networks:
+      - email-audit-network
+
+  report-service:
+    build: .
+    command: ["./reportgenerator"]
+    ports:
+      - "9092:9092"
+    networks:
+      - email-audit-network
+
+  http-server:
+    build: .
+    command: ["./main"]
+    ports:
+      - "8080:8080"
+    environment:
+      - GRPC_SERVER_ADDR=email-parser:9090
+      - RULES_ENGINE_ADDR=rules-engine:9091
+      - REPORT_SERVICE_ADDR=report-service:9092
+    depends_on:
+      - email-parser
+      - rules-engine
+      - report-service
+    networks:
+      - email-audit-network
+
+networks:
+  email-audit-network:
+    driver: bridge

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.30.2
-// source: email_audit.proto
+// source: proto/email_audit.proto
 
 package emailauditpb
 
@@ -58,11 +58,11 @@ func (x RuleType) String() string {
 }
 
 func (RuleType) Descriptor() protoreflect.EnumDescriptor {
-	return file_email_audit_proto_enumTypes[0].Descriptor()
+	return file_proto_email_audit_proto_enumTypes[0].Descriptor()
 }
 
 func (RuleType) Type() protoreflect.EnumType {
-	return &file_email_audit_proto_enumTypes[0]
+	return &file_proto_email_audit_proto_enumTypes[0]
 }
 
 func (x RuleType) Number() protoreflect.EnumNumber {
@@ -71,7 +71,7 @@ func (x RuleType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RuleType.Descriptor instead.
 func (RuleType) EnumDescriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{0}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{0}
 }
 
 type EmailAuditRequest struct {
@@ -88,7 +88,7 @@ type EmailAuditRequest struct {
 
 func (x *EmailAuditRequest) Reset() {
 	*x = EmailAuditRequest{}
-	mi := &file_email_audit_proto_msgTypes[0]
+	mi := &file_proto_email_audit_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -100,7 +100,7 @@ func (x *EmailAuditRequest) String() string {
 func (*EmailAuditRequest) ProtoMessage() {}
 
 func (x *EmailAuditRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[0]
+	mi := &file_proto_email_audit_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -113,7 +113,7 @@ func (x *EmailAuditRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmailAuditRequest.ProtoReflect.Descriptor instead.
 func (*EmailAuditRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{0}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *EmailAuditRequest) GetUserId() string {
@@ -169,7 +169,7 @@ type EmailAuditResponse struct {
 
 func (x *EmailAuditResponse) Reset() {
 	*x = EmailAuditResponse{}
-	mi := &file_email_audit_proto_msgTypes[1]
+	mi := &file_proto_email_audit_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -181,7 +181,7 @@ func (x *EmailAuditResponse) String() string {
 func (*EmailAuditResponse) ProtoMessage() {}
 
 func (x *EmailAuditResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[1]
+	mi := &file_proto_email_audit_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -194,7 +194,7 @@ func (x *EmailAuditResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmailAuditResponse.ProtoReflect.Descriptor instead.
 func (*EmailAuditResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{1}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *EmailAuditResponse) GetAuditId() string {
@@ -228,7 +228,7 @@ type GetAuditReportRequest struct {
 
 func (x *GetAuditReportRequest) Reset() {
 	*x = GetAuditReportRequest{}
-	mi := &file_email_audit_proto_msgTypes[2]
+	mi := &file_proto_email_audit_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -240,7 +240,7 @@ func (x *GetAuditReportRequest) String() string {
 func (*GetAuditReportRequest) ProtoMessage() {}
 
 func (x *GetAuditReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[2]
+	mi := &file_proto_email_audit_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -253,7 +253,7 @@ func (x *GetAuditReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuditReportRequest.ProtoReflect.Descriptor instead.
 func (*GetAuditReportRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{2}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetAuditReportRequest) GetAuditId() string {
@@ -280,7 +280,7 @@ type GetAuditReportResponse struct {
 
 func (x *GetAuditReportResponse) Reset() {
 	*x = GetAuditReportResponse{}
-	mi := &file_email_audit_proto_msgTypes[3]
+	mi := &file_proto_email_audit_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -292,7 +292,7 @@ func (x *GetAuditReportResponse) String() string {
 func (*GetAuditReportResponse) ProtoMessage() {}
 
 func (x *GetAuditReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[3]
+	mi := &file_proto_email_audit_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -305,7 +305,7 @@ func (x *GetAuditReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuditReportResponse.ProtoReflect.Descriptor instead.
 func (*GetAuditReportResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{3}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetAuditReportResponse) GetReport() *AuditReport {
@@ -334,7 +334,7 @@ type GetAuditSummaryRequest struct {
 
 func (x *GetAuditSummaryRequest) Reset() {
 	*x = GetAuditSummaryRequest{}
-	mi := &file_email_audit_proto_msgTypes[4]
+	mi := &file_proto_email_audit_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -346,7 +346,7 @@ func (x *GetAuditSummaryRequest) String() string {
 func (*GetAuditSummaryRequest) ProtoMessage() {}
 
 func (x *GetAuditSummaryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[4]
+	mi := &file_proto_email_audit_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -359,7 +359,7 @@ func (x *GetAuditSummaryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuditSummaryRequest.ProtoReflect.Descriptor instead.
 func (*GetAuditSummaryRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{4}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetAuditSummaryRequest) GetUserId() string {
@@ -402,7 +402,7 @@ type GetAuditSummaryResponse struct {
 
 func (x *GetAuditSummaryResponse) Reset() {
 	*x = GetAuditSummaryResponse{}
-	mi := &file_email_audit_proto_msgTypes[5]
+	mi := &file_proto_email_audit_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -414,7 +414,7 @@ func (x *GetAuditSummaryResponse) String() string {
 func (*GetAuditSummaryResponse) ProtoMessage() {}
 
 func (x *GetAuditSummaryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[5]
+	mi := &file_proto_email_audit_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -427,7 +427,7 @@ func (x *GetAuditSummaryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAuditSummaryResponse.ProtoReflect.Descriptor instead.
 func (*GetAuditSummaryResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{5}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetAuditSummaryResponse) GetReports() []*AuditReport {
@@ -463,13 +463,14 @@ type RulesEvaluationRequest struct {
 	AuditId       string                 `protobuf:"bytes,1,opt,name=audit_id,json=auditId,proto3" json:"audit_id,omitempty"`
 	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	RuleSet       []*Rule                `protobuf:"bytes,3,rep,name=rule_set,json=ruleSet,proto3" json:"rule_set,omitempty"`
+	EmailThread   *EmailThread           `protobuf:"bytes,4,opt,name=email_thread,json=emailThread,proto3" json:"email_thread,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *RulesEvaluationRequest) Reset() {
 	*x = RulesEvaluationRequest{}
-	mi := &file_email_audit_proto_msgTypes[6]
+	mi := &file_proto_email_audit_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -481,7 +482,7 @@ func (x *RulesEvaluationRequest) String() string {
 func (*RulesEvaluationRequest) ProtoMessage() {}
 
 func (x *RulesEvaluationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[6]
+	mi := &file_proto_email_audit_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -494,7 +495,7 @@ func (x *RulesEvaluationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RulesEvaluationRequest.ProtoReflect.Descriptor instead.
 func (*RulesEvaluationRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{6}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *RulesEvaluationRequest) GetAuditId() string {
@@ -518,6 +519,13 @@ func (x *RulesEvaluationRequest) GetRuleSet() []*Rule {
 	return nil
 }
 
+func (x *RulesEvaluationRequest) GetEmailThread() *EmailThread {
+	if x != nil {
+		return x.EmailThread
+	}
+	return nil
+}
+
 type RulesEvaluationResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	AuditId       string                 `protobuf:"bytes,1,opt,name=audit_id,json=auditId,proto3" json:"audit_id,omitempty"`
@@ -529,7 +537,7 @@ type RulesEvaluationResponse struct {
 
 func (x *RulesEvaluationResponse) Reset() {
 	*x = RulesEvaluationResponse{}
-	mi := &file_email_audit_proto_msgTypes[7]
+	mi := &file_proto_email_audit_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -541,7 +549,7 @@ func (x *RulesEvaluationResponse) String() string {
 func (*RulesEvaluationResponse) ProtoMessage() {}
 
 func (x *RulesEvaluationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[7]
+	mi := &file_proto_email_audit_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -554,7 +562,7 @@ func (x *RulesEvaluationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RulesEvaluationResponse.ProtoReflect.Descriptor instead.
 func (*RulesEvaluationResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{7}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *RulesEvaluationResponse) GetAuditId() string {
@@ -588,7 +596,7 @@ type AddRuleRequest struct {
 
 func (x *AddRuleRequest) Reset() {
 	*x = AddRuleRequest{}
-	mi := &file_email_audit_proto_msgTypes[8]
+	mi := &file_proto_email_audit_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -600,7 +608,7 @@ func (x *AddRuleRequest) String() string {
 func (*AddRuleRequest) ProtoMessage() {}
 
 func (x *AddRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[8]
+	mi := &file_proto_email_audit_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -613,7 +621,7 @@ func (x *AddRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRuleRequest.ProtoReflect.Descriptor instead.
 func (*AddRuleRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{8}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *AddRuleRequest) GetRule() *Rule {
@@ -640,7 +648,7 @@ type AddRuleResponse struct {
 
 func (x *AddRuleResponse) Reset() {
 	*x = AddRuleResponse{}
-	mi := &file_email_audit_proto_msgTypes[9]
+	mi := &file_proto_email_audit_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -652,7 +660,7 @@ func (x *AddRuleResponse) String() string {
 func (*AddRuleResponse) ProtoMessage() {}
 
 func (x *AddRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[9]
+	mi := &file_proto_email_audit_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -665,7 +673,7 @@ func (x *AddRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRuleResponse.ProtoReflect.Descriptor instead.
 func (*AddRuleResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{9}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *AddRuleResponse) GetRuleId() string {
@@ -692,7 +700,7 @@ type UpdateRuleRequest struct {
 
 func (x *UpdateRuleRequest) Reset() {
 	*x = UpdateRuleRequest{}
-	mi := &file_email_audit_proto_msgTypes[10]
+	mi := &file_proto_email_audit_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -704,7 +712,7 @@ func (x *UpdateRuleRequest) String() string {
 func (*UpdateRuleRequest) ProtoMessage() {}
 
 func (x *UpdateRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[10]
+	mi := &file_proto_email_audit_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -717,7 +725,7 @@ func (x *UpdateRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRuleRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRuleRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{10}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UpdateRuleRequest) GetRule() *Rule {
@@ -743,7 +751,7 @@ type UpdateRuleResponse struct {
 
 func (x *UpdateRuleResponse) Reset() {
 	*x = UpdateRuleResponse{}
-	mi := &file_email_audit_proto_msgTypes[11]
+	mi := &file_proto_email_audit_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -755,7 +763,7 @@ func (x *UpdateRuleResponse) String() string {
 func (*UpdateRuleResponse) ProtoMessage() {}
 
 func (x *UpdateRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[11]
+	mi := &file_proto_email_audit_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -768,7 +776,7 @@ func (x *UpdateRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRuleResponse.ProtoReflect.Descriptor instead.
 func (*UpdateRuleResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{11}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *UpdateRuleResponse) GetStatus() string {
@@ -788,7 +796,7 @@ type DeleteRuleRequest struct {
 
 func (x *DeleteRuleRequest) Reset() {
 	*x = DeleteRuleRequest{}
-	mi := &file_email_audit_proto_msgTypes[12]
+	mi := &file_proto_email_audit_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -800,7 +808,7 @@ func (x *DeleteRuleRequest) String() string {
 func (*DeleteRuleRequest) ProtoMessage() {}
 
 func (x *DeleteRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[12]
+	mi := &file_proto_email_audit_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -813,7 +821,7 @@ func (x *DeleteRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRuleRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRuleRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{12}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteRuleRequest) GetRuleId() string {
@@ -839,7 +847,7 @@ type DeleteRuleResponse struct {
 
 func (x *DeleteRuleResponse) Reset() {
 	*x = DeleteRuleResponse{}
-	mi := &file_email_audit_proto_msgTypes[13]
+	mi := &file_proto_email_audit_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -851,7 +859,7 @@ func (x *DeleteRuleResponse) String() string {
 func (*DeleteRuleResponse) ProtoMessage() {}
 
 func (x *DeleteRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[13]
+	mi := &file_proto_email_audit_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -864,7 +872,7 @@ func (x *DeleteRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRuleResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRuleResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{13}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *DeleteRuleResponse) GetStatus() string {
@@ -885,7 +893,7 @@ type ListRulesRequest struct {
 
 func (x *ListRulesRequest) Reset() {
 	*x = ListRulesRequest{}
-	mi := &file_email_audit_proto_msgTypes[14]
+	mi := &file_proto_email_audit_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -897,7 +905,7 @@ func (x *ListRulesRequest) String() string {
 func (*ListRulesRequest) ProtoMessage() {}
 
 func (x *ListRulesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[14]
+	mi := &file_proto_email_audit_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -910,7 +918,7 @@ func (x *ListRulesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRulesRequest.ProtoReflect.Descriptor instead.
 func (*ListRulesRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{14}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListRulesRequest) GetCompanyId() string {
@@ -943,7 +951,7 @@ type ListRulesResponse struct {
 
 func (x *ListRulesResponse) Reset() {
 	*x = ListRulesResponse{}
-	mi := &file_email_audit_proto_msgTypes[15]
+	mi := &file_proto_email_audit_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -955,7 +963,7 @@ func (x *ListRulesResponse) String() string {
 func (*ListRulesResponse) ProtoMessage() {}
 
 func (x *ListRulesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[15]
+	mi := &file_proto_email_audit_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -968,7 +976,7 @@ func (x *ListRulesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRulesResponse.ProtoReflect.Descriptor instead.
 func (*ListRulesResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{15}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListRulesResponse) GetRules() []*Rule {
@@ -988,7 +996,7 @@ type ParseEmailRequest struct {
 
 func (x *ParseEmailRequest) Reset() {
 	*x = ParseEmailRequest{}
-	mi := &file_email_audit_proto_msgTypes[16]
+	mi := &file_proto_email_audit_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1000,7 +1008,7 @@ func (x *ParseEmailRequest) String() string {
 func (*ParseEmailRequest) ProtoMessage() {}
 
 func (x *ParseEmailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[16]
+	mi := &file_proto_email_audit_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1013,7 +1021,7 @@ func (x *ParseEmailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParseEmailRequest.ProtoReflect.Descriptor instead.
 func (*ParseEmailRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{16}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ParseEmailRequest) GetRequestId() string {
@@ -1041,7 +1049,7 @@ type ParseEmailResponse struct {
 
 func (x *ParseEmailResponse) Reset() {
 	*x = ParseEmailResponse{}
-	mi := &file_email_audit_proto_msgTypes[17]
+	mi := &file_proto_email_audit_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1053,7 +1061,7 @@ func (x *ParseEmailResponse) String() string {
 func (*ParseEmailResponse) ProtoMessage() {}
 
 func (x *ParseEmailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[17]
+	mi := &file_proto_email_audit_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1066,7 +1074,7 @@ func (x *ParseEmailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ParseEmailResponse.ProtoReflect.Descriptor instead.
 func (*ParseEmailResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{17}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ParseEmailResponse) GetEmailThread() *EmailThread {
@@ -1099,7 +1107,7 @@ type ExtractThreadRequest struct {
 
 func (x *ExtractThreadRequest) Reset() {
 	*x = ExtractThreadRequest{}
-	mi := &file_email_audit_proto_msgTypes[18]
+	mi := &file_proto_email_audit_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1111,7 +1119,7 @@ func (x *ExtractThreadRequest) String() string {
 func (*ExtractThreadRequest) ProtoMessage() {}
 
 func (x *ExtractThreadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[18]
+	mi := &file_proto_email_audit_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1124,7 +1132,7 @@ func (x *ExtractThreadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtractThreadRequest.ProtoReflect.Descriptor instead.
 func (*ExtractThreadRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{18}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ExtractThreadRequest) GetEmail() *EmailMessage {
@@ -1143,7 +1151,7 @@ type ExtractThreadResponse struct {
 
 func (x *ExtractThreadResponse) Reset() {
 	*x = ExtractThreadResponse{}
-	mi := &file_email_audit_proto_msgTypes[19]
+	mi := &file_proto_email_audit_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1155,7 +1163,7 @@ func (x *ExtractThreadResponse) String() string {
 func (*ExtractThreadResponse) ProtoMessage() {}
 
 func (x *ExtractThreadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[19]
+	mi := &file_proto_email_audit_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1168,7 +1176,7 @@ func (x *ExtractThreadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtractThreadResponse.ProtoReflect.Descriptor instead.
 func (*ExtractThreadResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{19}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ExtractThreadResponse) GetThread() *EmailThread {
@@ -1189,7 +1197,7 @@ type GenerateReportRequest struct {
 
 func (x *GenerateReportRequest) Reset() {
 	*x = GenerateReportRequest{}
-	mi := &file_email_audit_proto_msgTypes[20]
+	mi := &file_proto_email_audit_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1201,7 +1209,7 @@ func (x *GenerateReportRequest) String() string {
 func (*GenerateReportRequest) ProtoMessage() {}
 
 func (x *GenerateReportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[20]
+	mi := &file_proto_email_audit_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1214,7 +1222,7 @@ func (x *GenerateReportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateReportRequest.ProtoReflect.Descriptor instead.
 func (*GenerateReportRequest) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{20}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GenerateReportRequest) GetAuditId() string {
@@ -1249,7 +1257,7 @@ type GenerateReportResponse struct {
 
 func (x *GenerateReportResponse) Reset() {
 	*x = GenerateReportResponse{}
-	mi := &file_email_audit_proto_msgTypes[21]
+	mi := &file_proto_email_audit_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1261,7 +1269,7 @@ func (x *GenerateReportResponse) String() string {
 func (*GenerateReportResponse) ProtoMessage() {}
 
 func (x *GenerateReportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[21]
+	mi := &file_proto_email_audit_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1274,7 +1282,7 @@ func (x *GenerateReportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateReportResponse.ProtoReflect.Descriptor instead.
 func (*GenerateReportResponse) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{21}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GenerateReportResponse) GetReportContent() []byte {
@@ -1314,7 +1322,7 @@ type AuditReport struct {
 
 func (x *AuditReport) Reset() {
 	*x = AuditReport{}
-	mi := &file_email_audit_proto_msgTypes[22]
+	mi := &file_proto_email_audit_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1326,7 +1334,7 @@ func (x *AuditReport) String() string {
 func (*AuditReport) ProtoMessage() {}
 
 func (x *AuditReport) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[22]
+	mi := &file_proto_email_audit_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1339,7 +1347,7 @@ func (x *AuditReport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditReport.ProtoReflect.Descriptor instead.
 func (*AuditReport) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{22}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *AuditReport) GetAuditId() string {
@@ -1410,7 +1418,7 @@ type EmailThread struct {
 
 func (x *EmailThread) Reset() {
 	*x = EmailThread{}
-	mi := &file_email_audit_proto_msgTypes[23]
+	mi := &file_proto_email_audit_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1422,7 +1430,7 @@ func (x *EmailThread) String() string {
 func (*EmailThread) ProtoMessage() {}
 
 func (x *EmailThread) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[23]
+	mi := &file_proto_email_audit_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1435,7 +1443,7 @@ func (x *EmailThread) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmailThread.ProtoReflect.Descriptor instead.
 func (*EmailThread) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{23}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *EmailThread) GetThreadId() string {
@@ -1484,7 +1492,7 @@ type EmailMessage struct {
 
 func (x *EmailMessage) Reset() {
 	*x = EmailMessage{}
-	mi := &file_email_audit_proto_msgTypes[24]
+	mi := &file_proto_email_audit_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1496,7 +1504,7 @@ func (x *EmailMessage) String() string {
 func (*EmailMessage) ProtoMessage() {}
 
 func (x *EmailMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[24]
+	mi := &file_proto_email_audit_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1509,7 +1517,7 @@ func (x *EmailMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EmailMessage.ProtoReflect.Descriptor instead.
 func (*EmailMessage) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{24}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *EmailMessage) GetMessageId() string {
@@ -1597,7 +1605,7 @@ type RuleEvaluation struct {
 
 func (x *RuleEvaluation) Reset() {
 	*x = RuleEvaluation{}
-	mi := &file_email_audit_proto_msgTypes[25]
+	mi := &file_proto_email_audit_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1609,7 +1617,7 @@ func (x *RuleEvaluation) String() string {
 func (*RuleEvaluation) ProtoMessage() {}
 
 func (x *RuleEvaluation) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[25]
+	mi := &file_proto_email_audit_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1622,7 +1630,7 @@ func (x *RuleEvaluation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RuleEvaluation.ProtoReflect.Descriptor instead.
 func (*RuleEvaluation) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{25}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *RuleEvaluation) GetRuleId() string {
@@ -1692,7 +1700,7 @@ type Rule struct {
 
 func (x *Rule) Reset() {
 	*x = Rule{}
-	mi := &file_email_audit_proto_msgTypes[26]
+	mi := &file_proto_email_audit_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1704,7 +1712,7 @@ func (x *Rule) String() string {
 func (*Rule) ProtoMessage() {}
 
 func (x *Rule) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[26]
+	mi := &file_proto_email_audit_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1717,7 +1725,7 @@ func (x *Rule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Rule.ProtoReflect.Descriptor instead.
 func (*Rule) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{26}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *Rule) GetId() string {
@@ -1802,7 +1810,7 @@ type RuleConfig struct {
 
 func (x *RuleConfig) Reset() {
 	*x = RuleConfig{}
-	mi := &file_email_audit_proto_msgTypes[27]
+	mi := &file_proto_email_audit_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1814,7 +1822,7 @@ func (x *RuleConfig) String() string {
 func (*RuleConfig) ProtoMessage() {}
 
 func (x *RuleConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_email_audit_proto_msgTypes[27]
+	mi := &file_proto_email_audit_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1827,7 +1835,7 @@ func (x *RuleConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RuleConfig.ProtoReflect.Descriptor instead.
 func (*RuleConfig) Descriptor() ([]byte, []int) {
-	return file_email_audit_proto_rawDescGZIP(), []int{27}
+	return file_proto_email_audit_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *RuleConfig) GetParameters() map[string]string {
@@ -1858,11 +1866,11 @@ func (x *RuleConfig) GetThreshold() float64 {
 	return 0
 }
 
-var File_email_audit_proto protoreflect.FileDescriptor
+var File_proto_email_audit_proto protoreflect.FileDescriptor
 
-const file_email_audit_proto_rawDesc = "" +
+const file_proto_email_audit_proto_rawDesc = "" +
 	"\n" +
-	"\x11email_audit.proto\x12\n" +
+	"\x17proto/email_audit.proto\x12\n" +
 	"emailaudit\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcb\x02\n" +
 	"\x11EmailAuditRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x19\n" +
@@ -1896,11 +1904,12 @@ const file_email_audit_proto_rawDesc = "" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
 	"totalCount\x12\x12\n" +
 	"\x04page\x18\x03 \x01(\x05R\x04page\x12\x1b\n" +
-	"\tpage_size\x18\x04 \x01(\x05R\bpageSize\"y\n" +
+	"\tpage_size\x18\x04 \x01(\x05R\bpageSize\"\xb5\x01\n" +
 	"\x16RulesEvaluationRequest\x12\x19\n" +
 	"\baudit_id\x18\x01 \x01(\tR\aauditId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12+\n" +
-	"\brule_set\x18\x03 \x03(\v2\x10.emailaudit.RuleR\aruleSet\"\x8a\x01\n" +
+	"\brule_set\x18\x03 \x03(\v2\x10.emailaudit.RuleR\aruleSet\x12:\n" +
+	"\femail_thread\x18\x04 \x01(\v2\x17.emailaudit.EmailThreadR\vemailThread\"\x8a\x01\n" +
 	"\x17RulesEvaluationResponse\x12\x19\n" +
 	"\baudit_id\x18\x01 \x01(\tR\aauditId\x12<\n" +
 	"\vevaluations\x18\x02 \x03(\v2\x1a.emailaudit.RuleEvaluationR\vevaluations\x12\x16\n" +
@@ -2043,20 +2052,20 @@ const file_email_audit_proto_rawDesc = "" +
 	"\x0eGenerateReport\x12!.emailaudit.GenerateReportRequest\x1a\".emailaudit.GenerateReportResponseB\x1dZ\x1bgen/emailaudit;emailauditpbb\x06proto3"
 
 var (
-	file_email_audit_proto_rawDescOnce sync.Once
-	file_email_audit_proto_rawDescData []byte
+	file_proto_email_audit_proto_rawDescOnce sync.Once
+	file_proto_email_audit_proto_rawDescData []byte
 )
 
-func file_email_audit_proto_rawDescGZIP() []byte {
-	file_email_audit_proto_rawDescOnce.Do(func() {
-		file_email_audit_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_email_audit_proto_rawDesc), len(file_email_audit_proto_rawDesc)))
+func file_proto_email_audit_proto_rawDescGZIP() []byte {
+	file_proto_email_audit_proto_rawDescOnce.Do(func() {
+		file_proto_email_audit_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_email_audit_proto_rawDesc), len(file_proto_email_audit_proto_rawDesc)))
 	})
-	return file_email_audit_proto_rawDescData
+	return file_proto_email_audit_proto_rawDescData
 }
 
-var file_email_audit_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_email_audit_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
-var file_email_audit_proto_goTypes = []any{
+var file_proto_email_audit_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_proto_email_audit_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
+var file_proto_email_audit_proto_goTypes = []any{
 	(RuleType)(0),                   // 0: emailaudit.RuleType
 	(*EmailAuditRequest)(nil),       // 1: emailaudit.EmailAuditRequest
 	(*EmailAuditResponse)(nil),      // 2: emailaudit.EmailAuditResponse
@@ -2091,81 +2100,82 @@ var file_email_audit_proto_goTypes = []any{
 	nil,                             // 31: emailaudit.RuleConfig.ParametersEntry
 	(*timestamppb.Timestamp)(nil),   // 32: google.protobuf.Timestamp
 }
-var file_email_audit_proto_depIdxs = []int32{
+var file_proto_email_audit_proto_depIdxs = []int32{
 	32, // 0: emailaudit.EmailAuditRequest.timestamp:type_name -> google.protobuf.Timestamp
 	29, // 1: emailaudit.EmailAuditRequest.metadata:type_name -> emailaudit.EmailAuditRequest.MetadataEntry
 	23, // 2: emailaudit.GetAuditReportResponse.report:type_name -> emailaudit.AuditReport
 	23, // 3: emailaudit.GetAuditSummaryResponse.reports:type_name -> emailaudit.AuditReport
 	27, // 4: emailaudit.RulesEvaluationRequest.rule_set:type_name -> emailaudit.Rule
-	26, // 5: emailaudit.RulesEvaluationResponse.evaluations:type_name -> emailaudit.RuleEvaluation
-	27, // 6: emailaudit.AddRuleRequest.rule:type_name -> emailaudit.Rule
-	27, // 7: emailaudit.UpdateRuleRequest.rule:type_name -> emailaudit.Rule
-	27, // 8: emailaudit.ListRulesResponse.rules:type_name -> emailaudit.Rule
-	24, // 9: emailaudit.ParseEmailResponse.email_thread:type_name -> emailaudit.EmailThread
-	25, // 10: emailaudit.ExtractThreadRequest.email:type_name -> emailaudit.EmailMessage
-	24, // 11: emailaudit.ExtractThreadResponse.thread:type_name -> emailaudit.EmailThread
-	23, // 12: emailaudit.GenerateReportRequest.report_data:type_name -> emailaudit.AuditReport
-	26, // 13: emailaudit.AuditReport.rule_evaluations:type_name -> emailaudit.RuleEvaluation
-	32, // 14: emailaudit.AuditReport.created_at:type_name -> google.protobuf.Timestamp
-	24, // 15: emailaudit.AuditReport.email_thread:type_name -> emailaudit.EmailThread
-	25, // 16: emailaudit.EmailThread.messages:type_name -> emailaudit.EmailMessage
-	32, // 17: emailaudit.EmailMessage.timestamp:type_name -> google.protobuf.Timestamp
-	30, // 18: emailaudit.EmailMessage.headers:type_name -> emailaudit.EmailMessage.HeadersEntry
-	0,  // 19: emailaudit.Rule.type:type_name -> emailaudit.RuleType
-	28, // 20: emailaudit.Rule.config:type_name -> emailaudit.RuleConfig
-	32, // 21: emailaudit.Rule.created_at:type_name -> google.protobuf.Timestamp
-	32, // 22: emailaudit.Rule.updated_at:type_name -> google.protobuf.Timestamp
-	31, // 23: emailaudit.RuleConfig.parameters:type_name -> emailaudit.RuleConfig.ParametersEntry
-	1,  // 24: emailaudit.EmailAuditService.ProcessEmailAudit:input_type -> emailaudit.EmailAuditRequest
-	3,  // 25: emailaudit.EmailAuditService.GetAuditReport:input_type -> emailaudit.GetAuditReportRequest
-	5,  // 26: emailaudit.EmailAuditService.GetAuditSummary:input_type -> emailaudit.GetAuditSummaryRequest
-	7,  // 27: emailaudit.RulesEngineService.EvaluateRules:input_type -> emailaudit.RulesEvaluationRequest
-	9,  // 28: emailaudit.RulesEngineService.AddRule:input_type -> emailaudit.AddRuleRequest
-	11, // 29: emailaudit.RulesEngineService.UpdateRule:input_type -> emailaudit.UpdateRuleRequest
-	13, // 30: emailaudit.RulesEngineService.DeleteRule:input_type -> emailaudit.DeleteRuleRequest
-	15, // 31: emailaudit.RulesEngineService.ListRules:input_type -> emailaudit.ListRulesRequest
-	17, // 32: emailaudit.EmailProcessingService.ParseEmail:input_type -> emailaudit.ParseEmailRequest
-	19, // 33: emailaudit.EmailProcessingService.ExtractThread:input_type -> emailaudit.ExtractThreadRequest
-	21, // 34: emailaudit.ReportGenerationService.GenerateReport:input_type -> emailaudit.GenerateReportRequest
-	2,  // 35: emailaudit.EmailAuditService.ProcessEmailAudit:output_type -> emailaudit.EmailAuditResponse
-	4,  // 36: emailaudit.EmailAuditService.GetAuditReport:output_type -> emailaudit.GetAuditReportResponse
-	6,  // 37: emailaudit.EmailAuditService.GetAuditSummary:output_type -> emailaudit.GetAuditSummaryResponse
-	8,  // 38: emailaudit.RulesEngineService.EvaluateRules:output_type -> emailaudit.RulesEvaluationResponse
-	10, // 39: emailaudit.RulesEngineService.AddRule:output_type -> emailaudit.AddRuleResponse
-	12, // 40: emailaudit.RulesEngineService.UpdateRule:output_type -> emailaudit.UpdateRuleResponse
-	14, // 41: emailaudit.RulesEngineService.DeleteRule:output_type -> emailaudit.DeleteRuleResponse
-	16, // 42: emailaudit.RulesEngineService.ListRules:output_type -> emailaudit.ListRulesResponse
-	18, // 43: emailaudit.EmailProcessingService.ParseEmail:output_type -> emailaudit.ParseEmailResponse
-	20, // 44: emailaudit.EmailProcessingService.ExtractThread:output_type -> emailaudit.ExtractThreadResponse
-	22, // 45: emailaudit.ReportGenerationService.GenerateReport:output_type -> emailaudit.GenerateReportResponse
-	35, // [35:46] is the sub-list for method output_type
-	24, // [24:35] is the sub-list for method input_type
-	24, // [24:24] is the sub-list for extension type_name
-	24, // [24:24] is the sub-list for extension extendee
-	0,  // [0:24] is the sub-list for field type_name
+	24, // 5: emailaudit.RulesEvaluationRequest.email_thread:type_name -> emailaudit.EmailThread
+	26, // 6: emailaudit.RulesEvaluationResponse.evaluations:type_name -> emailaudit.RuleEvaluation
+	27, // 7: emailaudit.AddRuleRequest.rule:type_name -> emailaudit.Rule
+	27, // 8: emailaudit.UpdateRuleRequest.rule:type_name -> emailaudit.Rule
+	27, // 9: emailaudit.ListRulesResponse.rules:type_name -> emailaudit.Rule
+	24, // 10: emailaudit.ParseEmailResponse.email_thread:type_name -> emailaudit.EmailThread
+	25, // 11: emailaudit.ExtractThreadRequest.email:type_name -> emailaudit.EmailMessage
+	24, // 12: emailaudit.ExtractThreadResponse.thread:type_name -> emailaudit.EmailThread
+	23, // 13: emailaudit.GenerateReportRequest.report_data:type_name -> emailaudit.AuditReport
+	26, // 14: emailaudit.AuditReport.rule_evaluations:type_name -> emailaudit.RuleEvaluation
+	32, // 15: emailaudit.AuditReport.created_at:type_name -> google.protobuf.Timestamp
+	24, // 16: emailaudit.AuditReport.email_thread:type_name -> emailaudit.EmailThread
+	25, // 17: emailaudit.EmailThread.messages:type_name -> emailaudit.EmailMessage
+	32, // 18: emailaudit.EmailMessage.timestamp:type_name -> google.protobuf.Timestamp
+	30, // 19: emailaudit.EmailMessage.headers:type_name -> emailaudit.EmailMessage.HeadersEntry
+	0,  // 20: emailaudit.Rule.type:type_name -> emailaudit.RuleType
+	28, // 21: emailaudit.Rule.config:type_name -> emailaudit.RuleConfig
+	32, // 22: emailaudit.Rule.created_at:type_name -> google.protobuf.Timestamp
+	32, // 23: emailaudit.Rule.updated_at:type_name -> google.protobuf.Timestamp
+	31, // 24: emailaudit.RuleConfig.parameters:type_name -> emailaudit.RuleConfig.ParametersEntry
+	1,  // 25: emailaudit.EmailAuditService.ProcessEmailAudit:input_type -> emailaudit.EmailAuditRequest
+	3,  // 26: emailaudit.EmailAuditService.GetAuditReport:input_type -> emailaudit.GetAuditReportRequest
+	5,  // 27: emailaudit.EmailAuditService.GetAuditSummary:input_type -> emailaudit.GetAuditSummaryRequest
+	7,  // 28: emailaudit.RulesEngineService.EvaluateRules:input_type -> emailaudit.RulesEvaluationRequest
+	9,  // 29: emailaudit.RulesEngineService.AddRule:input_type -> emailaudit.AddRuleRequest
+	11, // 30: emailaudit.RulesEngineService.UpdateRule:input_type -> emailaudit.UpdateRuleRequest
+	13, // 31: emailaudit.RulesEngineService.DeleteRule:input_type -> emailaudit.DeleteRuleRequest
+	15, // 32: emailaudit.RulesEngineService.ListRules:input_type -> emailaudit.ListRulesRequest
+	17, // 33: emailaudit.EmailProcessingService.ParseEmail:input_type -> emailaudit.ParseEmailRequest
+	19, // 34: emailaudit.EmailProcessingService.ExtractThread:input_type -> emailaudit.ExtractThreadRequest
+	21, // 35: emailaudit.ReportGenerationService.GenerateReport:input_type -> emailaudit.GenerateReportRequest
+	2,  // 36: emailaudit.EmailAuditService.ProcessEmailAudit:output_type -> emailaudit.EmailAuditResponse
+	4,  // 37: emailaudit.EmailAuditService.GetAuditReport:output_type -> emailaudit.GetAuditReportResponse
+	6,  // 38: emailaudit.EmailAuditService.GetAuditSummary:output_type -> emailaudit.GetAuditSummaryResponse
+	8,  // 39: emailaudit.RulesEngineService.EvaluateRules:output_type -> emailaudit.RulesEvaluationResponse
+	10, // 40: emailaudit.RulesEngineService.AddRule:output_type -> emailaudit.AddRuleResponse
+	12, // 41: emailaudit.RulesEngineService.UpdateRule:output_type -> emailaudit.UpdateRuleResponse
+	14, // 42: emailaudit.RulesEngineService.DeleteRule:output_type -> emailaudit.DeleteRuleResponse
+	16, // 43: emailaudit.RulesEngineService.ListRules:output_type -> emailaudit.ListRulesResponse
+	18, // 44: emailaudit.EmailProcessingService.ParseEmail:output_type -> emailaudit.ParseEmailResponse
+	20, // 45: emailaudit.EmailProcessingService.ExtractThread:output_type -> emailaudit.ExtractThreadResponse
+	22, // 46: emailaudit.ReportGenerationService.GenerateReport:output_type -> emailaudit.GenerateReportResponse
+	36, // [36:47] is the sub-list for method output_type
+	25, // [25:36] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
-func init() { file_email_audit_proto_init() }
-func file_email_audit_proto_init() {
-	if File_email_audit_proto != nil {
+func init() { file_proto_email_audit_proto_init() }
+func file_proto_email_audit_proto_init() {
+	if File_proto_email_audit_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_email_audit_proto_rawDesc), len(file_email_audit_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_email_audit_proto_rawDesc), len(file_proto_email_audit_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   4,
 		},
-		GoTypes:           file_email_audit_proto_goTypes,
-		DependencyIndexes: file_email_audit_proto_depIdxs,
-		EnumInfos:         file_email_audit_proto_enumTypes,
-		MessageInfos:      file_email_audit_proto_msgTypes,
+		GoTypes:           file_proto_email_audit_proto_goTypes,
+		DependencyIndexes: file_proto_email_audit_proto_depIdxs,
+		EnumInfos:         file_proto_email_audit_proto_enumTypes,
+		MessageInfos:      file_proto_email_audit_proto_msgTypes,
 	}.Build()
-	File_email_audit_proto = out.File
-	file_email_audit_proto_goTypes = nil
-	file_email_audit_proto_depIdxs = nil
+	File_proto_email_audit_proto = out.File
+	file_proto_email_audit_proto_goTypes = nil
+	file_proto_email_audit_proto_depIdxs = nil
 }

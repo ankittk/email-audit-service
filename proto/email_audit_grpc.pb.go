@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v6.30.2
-// source: email_audit.proto
+// source: proto/email_audit.proto
 
 package emailauditpb
 
@@ -199,7 +199,7 @@ var EmailAuditService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "email_audit.proto",
+	Metadata: "proto/email_audit.proto",
 }
 
 const (
@@ -463,7 +463,7 @@ var RulesEngineService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "email_audit.proto",
+	Metadata: "proto/email_audit.proto",
 }
 
 const (
@@ -602,7 +602,7 @@ var EmailProcessingService_ServiceDesc = grpc.ServiceDesc{
 			ClientStreams: true,
 		},
 	},
-	Metadata: "email_audit.proto",
+	Metadata: "proto/email_audit.proto",
 }
 
 const (
@@ -707,5 +707,5 @@ var ReportGenerationService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "email_audit.proto",
+	Metadata: "proto/email_audit.proto",
 }

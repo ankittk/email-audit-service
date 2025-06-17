@@ -93,6 +93,7 @@ message RulesEvaluationRequest {
   string audit_id = 1;
   string user_id = 2;
   repeated Rule rule_set = 3;
+  EmailThread email_thread = 4;
 }
 
 message RulesEvaluationResponse {
