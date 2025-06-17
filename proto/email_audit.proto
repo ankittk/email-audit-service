@@ -1,0 +1,241 @@
+syntax = "proto3";
+
+package emailaudit;
+option go_package = "gen/emailaudit;emailauditpb";
+
+import "google/protobuf/timestamp.proto";
+
+// ========================= SERVICES =========================
+
+service EmailAuditService {
+  // Processes an incoming email for audit
+  rpc ProcessEmailAudit(EmailAuditRequest) returns (EmailAuditResponse);
+
+  // Retrieves a detailed audit report
+  rpc GetAuditReport(GetAuditReportRequest) returns (GetAuditReportResponse);
+
+  // Returns a paginated summary of audit reports
+  rpc GetAuditSummary(GetAuditSummaryRequest) returns (GetAuditSummaryResponse);
+}
+
+service RulesEngineService {
+  // Evaluates a set of rules against an audit
+  rpc EvaluateRules(RulesEvaluationRequest) returns (RulesEvaluationResponse);
+
+  // Adds a new rule to the system
+  rpc AddRule(AddRuleRequest) returns (AddRuleResponse);
+
+  // Updates an existing rule
+  rpc UpdateRule(UpdateRuleRequest) returns (UpdateRuleResponse);
+
+  // Deletes a rule by ID
+  rpc DeleteRule(DeleteRuleRequest) returns (DeleteRuleResponse);
+
+  // Lists rules with optional filters
+  rpc ListRules(ListRulesRequest) returns (ListRulesResponse);
+}
+
+service EmailProcessingService {
+  // Parses a raw EML email into structured format
+  rpc ParseEmail(stream ParseEmailRequest) returns (ParseEmailResponse);
+
+  // Extracts the thread from an email message
+  rpc ExtractThread(ExtractThreadRequest) returns (ExtractThreadResponse);
+}
+
+service ReportGenerationService {
+  // Generates a report in specified format
+  rpc GenerateReport(GenerateReportRequest) returns (GenerateReportResponse);
+}
+
+// ========================= REQUEST/RESPONSE =========================
+
+message EmailAuditRequest {
+  string user_id = 1;
+  string email_id = 2;
+  string company_id = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  bytes email_content = 5;
+  map<string, string> metadata = 6;
+}
+
+message EmailAuditResponse {
+  string audit_id = 1;
+  string status = 2;
+  string message = 3;
+}
+
+message GetAuditReportRequest {
+  string audit_id = 1;
+  string user_id = 2;
+}
+
+message GetAuditReportResponse {
+  AuditReport report = 1;
+  string status = 2;
+}
+
+message GetAuditSummaryRequest {
+  string user_id = 1;
+  string company_id = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message GetAuditSummaryResponse {
+  repeated AuditReport reports = 1;
+  int32 total_count = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message RulesEvaluationRequest {
+  string audit_id = 1;
+  string user_id = 2;
+  repeated Rule rule_set = 3;
+}
+
+message RulesEvaluationResponse {
+  string audit_id = 1;
+  repeated RuleEvaluation evaluations = 2;
+  string status = 3;
+}
+
+message AddRuleRequest {
+  Rule rule = 1;
+  string company_id = 2;
+}
+
+message AddRuleResponse {
+  string rule_id = 1;
+  string status = 2;
+}
+
+message UpdateRuleRequest {
+  Rule rule = 1;
+  string company_id = 2;
+}
+
+message UpdateRuleResponse {
+  string status = 1;
+}
+
+message DeleteRuleRequest {
+  string rule_id = 1;
+  string company_id = 2;
+}
+
+message DeleteRuleResponse {
+  string status = 1;
+}
+
+message ListRulesRequest {
+  string company_id = 1;
+  string category = 2;
+  bool enabled_only = 3;
+}
+
+message ListRulesResponse {
+  repeated Rule rules = 1;
+}
+
+message ParseEmailRequest {
+  string request_id = 1;
+  bytes chunk_data = 2; // Streaming data for large emails
+}
+
+message ParseEmailResponse {
+  EmailThread email_thread = 1;
+  string status = 2;
+  string error_message = 3;
+}
+
+message ExtractThreadRequest {
+  EmailMessage email = 1;
+}
+
+message ExtractThreadResponse {
+  EmailThread thread = 1;
+}
+
+message GenerateReportRequest {
+  string audit_id = 1;
+  AuditReport report_data = 2;
+  string format = 3; // Supported: json, pdf, html
+}
+
+message GenerateReportResponse {
+  bytes report_content = 1;
+  string content_type = 2;
+  string status = 3;
+}
+
+// ========================= DATA =========================
+
+message AuditReport {
+  string audit_id = 1;
+  string user_id = 2;
+  string company_id = 3;
+  double overall_score = 4;
+  repeated RuleEvaluation rule_evaluations = 5;
+  string summary = 6;
+  google.protobuf.Timestamp created_at = 7;
+  EmailThread email_thread = 8;
+}
+
+message EmailThread {
+  string thread_id = 1;
+  string subject = 2;
+  repeated EmailMessage messages = 3;
+  repeated string participants = 4;
+}
+
+message EmailMessage {
+  string message_id = 1;
+  string from = 2;
+  repeated string to = 3;
+  repeated string cc = 4;
+  string subject = 5;
+  string body = 6;
+  google.protobuf.Timestamp timestamp = 7;
+  bool is_html = 8;
+  bytes attachments = 9; // Raw bytes of attachments (should be base64 if stored)
+  map<string, string> headers = 10;
+}
+
+message RuleEvaluation {
+  string rule_id = 1;
+  string rule_name = 2;
+  string category = 3;
+  double score = 4;
+  double weight = 5;
+  bool passed = 6;
+  repeated string suggestions = 7;
+}
+
+message Rule {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string category = 4;
+  double weight = 5;
+  RuleType type = 6;
+  RuleConfig config = 7;
+  bool enabled = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp updated_at = 10;
+}
+
+enum RuleType {
+  REGEX_BASED = 0;     // Rule based on regex patterns
+  ML_BASED = 1;        // Rule using ML classification
+  KEYWORD_BASED = 2;   // Rule matching keywords
+  CUSTOM_LOGIC = 3;    // Rule using custom logic implementation
+}
+
+message RuleConfig {
+  map<string, string> parameters = 1;  // Dynamic config for rule
+  repeated string keywords = 2;        // Used for keyword-based rules
+  string regex_pattern = 3;            // Used for regex-based rules
+  double threshold = 4;                // Used in ML-based rules
+}
