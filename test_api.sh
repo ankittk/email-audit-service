@@ -10,7 +10,7 @@ echo "1. Testing health check..."
 curl -X GET "$BASE_URL/health" | jq
 
 echo -e "\n2. Testing email upload..."
-# Test email upload (you'll need a sample .eml file)
+
 curl -X POST "$BASE_URL/upload-email" \
   -F "file=@test/sample.eml" \
   -F "user_id=user123" \

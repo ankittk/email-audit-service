@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package emailaudit;
-option go_package = "gen/emailaudit;emailauditpb";
+option go_package = "github.com/ankittk/email-audit-service/proto;pb";
 
 import "google/protobuf/timestamp.proto";
 

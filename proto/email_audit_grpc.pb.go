@@ -4,7 +4,7 @@
 // - protoc             v6.30.2
 // source: proto/email_audit.proto
 
-package emailauditpb
+package pb
 
 import (
 	context "context"

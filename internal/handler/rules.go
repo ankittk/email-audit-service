@@ -7,15 +7,12 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/ankittk/email-audit-service/internal/config"
 	pb "github.com/ankittk/email-audit-service/proto"
 )
 
-func ListRulesHandler(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) ListRulesHandler(w http.ResponseWriter, r *http.Request) {
 	companyID := r.URL.Query().Get("company_id")
 	category := r.URL.Query().Get("category")
 	enabledOnly := r.URL.Query().Get("enabled_only") == "true"
@@ -25,19 +22,10 @@ func ListRulesHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	conn, err := grpc.NewClient(config.GRPCServerAddr(),
-		grpc.WithTransportCredentials(insecure.NewCredentials()))
-	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Internal service error")
-		return
-	}
-	defer conn.Close()
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	client := pb.NewRulesEngineServiceClient(conn)
-	resp, err := client.ListRules(ctx, &pb.ListRulesRequest{
+	resp, err := h.RulesClient.ListRules(ctx, &pb.ListRulesRequest{
 		CompanyId:   companyID,
 		Category:    category,
 		EnabledOnly: enabledOnly,
@@ -50,7 +38,7 @@ func ListRulesHandler(w http.ResponseWriter, r *http.Request) {
 	respondWithSuccess(w, resp.Rules, "Rules retrieved successfully")
 }
 
-func AddRuleHandler(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) AddRuleHandler(w http.ResponseWriter, r *http.Request) {
 	var rule pb.Rule
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
@@ -68,19 +56,10 @@ func AddRuleHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	conn, err := grpc.NewClient(config.GRPCServerAddr(),
-		grpc.WithTransportCredentials(insecure.NewCredentials()))
-	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Internal service error")
-		return
-	}
-	defer conn.Close()
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	client := pb.NewRulesEngineServiceClient(conn)
-	resp, err := client.AddRule(ctx, &pb.AddRuleRequest{
+	resp, err := h.RulesClient.AddRule(ctx, &pb.AddRuleRequest{
 		Rule:      &rule,
 		CompanyId: companyID,
 	})
@@ -95,7 +74,7 @@ func AddRuleHandler(w http.ResponseWriter, r *http.Request) {
 	}, "Rule added successfully")
 }
 
-func UpdateRuleHandler(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) UpdateRuleHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	ruleID := vars["rule_id"]
 
@@ -117,19 +96,10 @@ func UpdateRuleHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	conn, err := grpc.NewClient(config.GRPCServerAddr(),
-		grpc.WithTransportCredentials(insecure.NewCredentials()))
-	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Internal service error")
-		return
-	}
-	defer conn.Close()
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	client := pb.NewRulesEngineServiceClient(conn)
-	resp, err := client.UpdateRule(ctx, &pb.UpdateRuleRequest{
+	resp, err := h.RulesClient.UpdateRule(ctx, &pb.UpdateRuleRequest{
 		Rule:      &rule,
 		CompanyId: companyID,
 	})
@@ -143,9 +113,8 @@ func UpdateRuleHandler(w http.ResponseWriter, r *http.Request) {
 	}, "Rule updated successfully")
 }
 
-func DeleteRuleHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	ruleID := vars["rule_id"]
+func (h *Handler) DeleteRuleHandler(w http.ResponseWriter, r *http.Request) {
+	ruleID := mux.Vars(r)["rule_id"]
 	companyID := r.URL.Query().Get("company_id")
 
 	if companyID == "" {
@@ -153,19 +122,10 @@ func DeleteRuleHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	conn, err := grpc.NewClient(config.GRPCServerAddr(),
-		grpc.WithTransportCredentials(insecure.NewCredentials()))
-	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Internal service error")
-		return
-	}
-	defer conn.Close()
-
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	client := pb.NewRulesEngineServiceClient(conn)
-	resp, err := client.DeleteRule(ctx, &pb.DeleteRuleRequest{
+	resp, err := h.RulesClient.DeleteRule(ctx, &pb.DeleteRuleRequest{
 		RuleId:    ruleID,
 		CompanyId: companyID,
 	})

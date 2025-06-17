@@ -4,7 +4,7 @@
 // 	protoc        v6.30.2
 // source: proto/email_audit.proto
 
-package emailauditpb
+package pb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -2049,7 +2049,7 @@ const file_proto_email_audit_proto_rawDesc = "" +
 	"ParseEmail\x12\x1d.emailaudit.ParseEmailRequest\x1a\x1e.emailaudit.ParseEmailResponse(\x01\x12T\n" +
 	"\rExtractThread\x12 .emailaudit.ExtractThreadRequest\x1a!.emailaudit.ExtractThreadResponse2r\n" +
 	"\x17ReportGenerationService\x12W\n" +
-	"\x0eGenerateReport\x12!.emailaudit.GenerateReportRequest\x1a\".emailaudit.GenerateReportResponseB\x1dZ\x1bgen/emailaudit;emailauditpbb\x06proto3"
+	"\x0eGenerateReport\x12!.emailaudit.GenerateReportRequest\x1a\".emailaudit.GenerateReportResponseB1Z/github.com/ankittk/email-audit-service/proto;pbb\x06proto3"
 
 var (
 	file_proto_email_audit_proto_rawDescOnce sync.Once
